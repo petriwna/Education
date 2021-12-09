@@ -11,7 +11,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
     overflow: hidden;
     background: linear-gradient(#111344, #52154E);
 }
@@ -25,35 +24,72 @@ body{
 }
 
 .app_header{
-    padding: 20px;
     text-align: center;
     font-family: 'Caveat', cursive;
     font-size: 20px;
+    margin: 8px;
+}
+
+.header_title{
+    display: flex;
+    justify-content: center;
+    margin: 8px;
+}
+
+p{
+    padding: 15px;
+    font-size: 30px;
+}
+
+input{
+    font-size: 0.9rem;
+    font-weight: normal;
+    line-height: 0.9rem;
+    flex-direction: column;
+    width: 105px;
+    height: 45px;
+    padding: 2px;
+    background: #fff none;
+    border: 1px solid #999;
+    border-radius: 5px;
+    text-align: center;
+    margin: 8px;
+}
+
+.header_footer{
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    display: block;
+    margin: 8px;
+}
+
+.head_foot_inp{
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    display: block;
+    margin: 8px;
+}
+
+.app_content{
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    margin: 8px;
 }
 
 .app_container{
     display: flex;
     justify-content: center;
     font-family: Arial, sans-serif;
+    margin: 8px;
 }
 
 .app_footer{
-    padding: 20px;
     display: flex;
     justify-content: center;
-
-}
-
-.input_num{
-    font-size: 0.9rem;
-    font-weight: normal;
-    line-height: 1.2rem;
-    flex-direction: column;
-    padding: 0.8rem 1rem;
-    background: #fff none;
-    border: 1px solid #999;
-    border-radius: 5px;
-    text-align: center;
+    margin: 8px;
 }
 
 button{
@@ -62,7 +98,6 @@ button{
     font-size: 0.8rem;
     font-weight: normal;
     color: white;
-    display: inline-block;
     margin: 4px 10px;
     cursor: pointer;
     padding: 15px 15px;
