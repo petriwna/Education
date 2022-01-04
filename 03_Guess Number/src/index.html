@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guess Number</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&family=Caveat&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="../public/style/style.css">
+</head>
+<body>
+<div class="app">
+    <div class="app_header">
+        <h2>Выберите диапазон:</h2>
+        <div class="header_title">
+            <p>от</p>
+            <input type="text" id="inp_min_num" placeholder="1">
+            <p>до</p>
+            <input type="text" id="inp_max_num" placeholder="100">
+            <p>чисел</p>
+        </div>
+        <div class="header_footer">
+            <div class="head_foot_inp">
+                <h2>Выберите количество попыток:</h2>
+                <input type="text" id="inp_step_guess" placeholder="5">
+            </div>
+            <button class="btn_save" id="save">SAVE</button>
+        </div>
+    </div>
+    <div class="app_content">
+        <h1 id="txt_min_num">Привет, я задал число от <span id="min_num">1</span> до <span id="max_num">100</span>.</h1>
+        <h2>Попробуй угадай его за <span id="step_to_guess">5</span> попыток!</h2>
+    </div>
+    <div class="app_container">
+        <input class="input_num" type="text" id="input_num">
+    </div>
+    <div class="app_footer">
+        <button class="btn_generate" id="generate">GENERATE</button>
+        <button class="btn_exit" id="exit">EXIT</button>
+    </div>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
