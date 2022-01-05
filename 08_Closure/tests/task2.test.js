@@ -10,6 +10,6 @@ describe('getSum', () => {
         expect(getSum(str1, str2)).toBe('447');
     });
     test('two string big number get sum', () => {
-        expect(getSum(str2, str3)).toBe('');
+        expect(getSum(str3, str4)).toBe('1.3444444444444445e+50');
     });
 });
