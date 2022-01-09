@@ -59,10 +59,10 @@ let listOfPosts2 = [
         author: 'Uncle'
     }
 ];
-const str = 'Rimus';
+const author = 'Rimus';
 
 describe('getQuntityPostsByAuthor', () => {
     test('have list post and name author get all post by author', () => {
-        expect(getQuntityPostsByAuthor(listOfPosts2, str)).toBe('post -1, comments – 3');
+        expect(getQuntityPostsByAuthor(listOfPosts2, author)).toBe('post - 1, comments - 3');
     });
 });
