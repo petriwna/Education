@@ -13,7 +13,7 @@ describe('nineFigure, matrixToString', () => {
 });
 
 describe('nineFigure, matrixToString', () => {
-    test('get test matrix', () => {
+    test('get tests matrix', () => {
         const array = [
             ['*', '*'],
             ['*', '*']
