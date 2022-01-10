@@ -1,0 +1,33 @@
+{
+  "name": "04_Rqndomize",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "dependencies": {
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.45.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "cmd": "gulp",
+    "build": "yarn cmd default",
+    "watch": "yarn cmd watch"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "jest": "^27.4.5",
+    "@types/gulp": "^4.0.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petriwna/First-Homework.git"
+  },
+  "author": "Nataliia Sychevska",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/petriwna/First-Homework/issues"
+  },
+  "homepage": "https://github.com/petriwna/First-Homework#readme",
+  "description": ""
+}
