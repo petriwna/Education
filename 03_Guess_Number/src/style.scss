@@ -1,0 +1,115 @@
+$bg-blue: #111344;
+$bg-violet: #52154E;
+$bg-container: #AC9FBB;
+$white: #ffffff;
+$gray: #999999;
+$bg-btn: #230C33;
+$black: #000000;
+$bg-exit: #DDBDD5;
+$border-first: #111344;
+$border-second: #C21F39;
+$bg-focus: #C21F39;
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: linear-gradient($bg-blue, $bg-violet);
+}
+
+.app {
+  text-align: center;
+  margin: 0 auto;
+  width: 500px;
+  height: auto;
+  padding: 25px;
+  background: $bg-container;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.header {
+  text-align: center;
+
+  &--btn-save {
+    display: block;
+    background: $bg-btn;
+    width: 115px;
+    font-weight: normal;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 12px;
+    padding: 10px;
+    margin: 25px auto;
+    border: none;
+
+    &:hover {
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  &--number {
+    height: 30px;
+    font-size: 0.9rem;
+    font-weight: normal;
+    line-height: 0.9rem;
+    background: $white none;
+    text-align: center;
+    margin: 15px;
+    border-radius: 5px;
+    border: 2px solid $border-first;
+
+    &:focus {
+      outline-color: $bg-focus;
+    }
+  }
+
+  &--number-border{
+    border: 2px solid $border-second;
+  }
+}
+
+.footer {
+  text-align: center;
+
+  &--number {
+    height: 25px;
+    font-size: 0.9rem;
+    font-weight: normal;
+    line-height: 0.9rem;
+    background: $white none;
+    text-align: center;
+    margin: 15px;
+    border-radius: 5px;
+    border: 2px solid $border-first;
+
+    &:focus {
+      outline-color: $bg-focus;
+    }
+  }
+
+  &--btn {
+    display: block;
+    background: $bg-btn;
+    width: 115px;
+    font-weight: normal;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 12px;
+    padding: 10px;
+    margin: 25px auto;
+    border: none;
+
+    &:hover {
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  &--btn-exit {
+    background: $bg-exit;
+    color: $black;
+  }
+}
