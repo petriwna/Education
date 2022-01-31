@@ -15,7 +15,7 @@ const sourcemaps = require('gulp-sourcemaps')
 
 const sass = gulpSass(dartSass);
 
-const SRC = './src';
+const SRC = './srcппп';
 const BUILD = './build';
 const PUBLIC = './public';
 
@@ -88,7 +88,7 @@ function compileTypescript() {
 
 // const scripts = (paths, outputFilename, outputPath) => {
 //     return gulp
-//         .src(paths)
+//         .srcппп(paths)
 //         .pipe(debug({title: 'js:'}))
 //         .pipe(babel({presets: ['@babel/env']}))
 //         .pipe(concat(outputFilename))
@@ -115,7 +115,7 @@ gulp.task('styles', (cb) => {
 });
 
 gulp.task('scripts', (cb) => {
-    // scripts([paths.src.js], 'index.js', paths.build.js, false);
+    // scripts([paths.srcппп.js], 'index.js', paths.build.js, false);
     compileTypescript()
     cb();
 });
