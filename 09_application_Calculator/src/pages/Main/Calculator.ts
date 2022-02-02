@@ -1,7 +1,7 @@
 import {CalcInterface} from "./CalcInterface";
 
 export class Calculator implements CalcInterface{
-  private a: number;
+  a: number;
 
   constructor() {
     this.a = 0;
@@ -68,7 +68,8 @@ export class Calculator implements CalcInterface{
   }
 
   clearAll(): number {
-    console.log('clear')
+
+    console.log(this.a + ' clear')
     return this.a = 0;
   }
 

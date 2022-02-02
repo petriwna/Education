@@ -1,4 +1,4 @@
-export function addListener(id: string, eventType: string, callback: () => void) {
+export function addListener(id, eventType, callback) {
   const node = document.getElementById(id);
   if (node) {
     node.addEventListener(eventType, callback);
