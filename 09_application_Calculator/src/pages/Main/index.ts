@@ -1,18 +1,13 @@
 import "./styles.scss"
 import {Calculator} from "./Calculator";
-import {addListener} from "./utill";
-
-
-function handleBtnClick() {
-  console.log("click button")
-}
+import {handleBtnClick} from "./handlerBtnClick";
+import {handleDisplayUpdate} from "./handleDisplayUpdate";
 
 function init() {
   const calc = new Calculator;
-
   const calcButton = document.querySelectorAll('button');
   calcButton.forEach(btn => btn.addEventListener('click', handleBtnClick));
-  addListener('clear', 'click', calc.clearAll);
+  handleDisplayUpdate("96");
 }
 
 document.addEventListener('DOMContentLoaded', function () {

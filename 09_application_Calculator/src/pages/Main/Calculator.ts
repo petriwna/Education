@@ -2,9 +2,10 @@ import {CalcInterface} from "./CalcInterface";
 
 export class Calculator implements CalcInterface{
   a: number;
+  onDisplayUpdateHandlers: Array<Function>;
 
   constructor() {
-    this.a = 0;
+    this.onDisplayUpdateHandlers = [];
   }
 
   saveA(a: number): number {
