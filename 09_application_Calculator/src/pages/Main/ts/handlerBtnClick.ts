@@ -1,6 +1,5 @@
 declare interface ElementEvent extends Event {
   currentTarget: HTMLElement;
-  target: HTMLElement;
 }
 
 export function handleBtnClick(e: ElementEvent) {
@@ -9,5 +8,5 @@ export function handleBtnClick(e: ElementEvent) {
     value,
     type
   } = el.dataset;
-  console.log(type + value + ' click button')
+  console.log(`${type} ${value} click button`)
 }
