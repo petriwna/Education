@@ -1,6 +1,7 @@
 import {IGallery} from "./IGallery";
 import {renderImage} from "./renderImage";
 import {renderBigPhoto} from "./renderBigPhoto";
+import {setImageToSlide} from "./setImageToSlide";
 
 export class Gallery implements IGallery{
   getImages() {
@@ -20,7 +21,7 @@ export class Gallery implements IGallery{
   }
 
   onZoomImage(): void {
-    const gallery = document.querySelectorAll('.gallery__slider-photo')
+    const gallery = document.querySelectorAll('.gallery__slider--photo')
     gallery.forEach(i => {
       i.addEventListener('mouseover', () => {
         i.classList.add('zoom');
@@ -28,6 +29,23 @@ export class Gallery implements IGallery{
       i.addEventListener('mouseout', () => {
         i.classList.remove('zoom');
       });
+    });
+  }
+
+  onSliderShow(): void {
+    const btn = document.getElementById('open-modal');
+    const modal = document.getElementById('modal');
+    btn.addEventListener('click', () => {
+      setImageToSlide();
+      modal.classList.remove('hide');
+    });
+  }
+
+  offSlideShow(): void {
+    const btnClose = document.getElementById('close');
+    const modal = document.getElementById('modal');
+    btnClose.addEventListener('click', () => {
+      modal.classList.add('hide')
     });
   }
 }
