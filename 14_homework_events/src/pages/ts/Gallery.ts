@@ -1,8 +1,9 @@
 import {IGallery} from "./IGallery";
 import {renderImage} from "./renderImage";
+import {renderBigPhoto} from "./renderBigPhoto";
 
 export class Gallery implements IGallery{
-  getImage() {
+  getImages() {
     return fetch('https://jsonplaceholder.typicode.com/photos')
       .then(response => response.json())
       .then(data => {
@@ -11,7 +12,8 @@ export class Gallery implements IGallery{
       });
   }
 
-  showAllImage(): void {
+  getBigImage(): void {
+    const photos = document.getElementById('photos');
+    photos.addEventListener('click', renderBigPhoto)
   }
-
 }

@@ -4,7 +4,8 @@ import {Gallery} from "../ts/Gallery";
 
 function init() {
   const gallery = new Gallery()
-  gallery.getImage();
+  gallery.getImages();
+  gallery.getBigImage();
 }
 
 document.addEventListener('DOMContentLoaded', function () {

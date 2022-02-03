@@ -1,5 +1,5 @@
 export interface IGallery{
-  getImage: () => void
-  showAllImage: () => void
+  getImages: () => void
+  getBigImage: () => void
 
 }
