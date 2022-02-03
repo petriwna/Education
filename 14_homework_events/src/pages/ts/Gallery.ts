@@ -18,4 +18,16 @@ export class Gallery implements IGallery{
     const photos = document.getElementById('photos');
     photos.addEventListener('click', renderBigPhoto)
   }
+
+  onZoomImage(): void {
+    const gallery = document.querySelectorAll('.gallery__slider-photo')
+    gallery.forEach(i => {
+      i.addEventListener('mouseover', () => {
+        i.classList.add('zoom');
+      });
+      i.addEventListener('mouseout', () => {
+        i.classList.remove('zoom');
+      });
+    });
+  }
 }
