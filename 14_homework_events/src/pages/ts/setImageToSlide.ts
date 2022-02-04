@@ -2,7 +2,7 @@ export function setImageToSlide(){
   const gallery = document.querySelectorAll('.gallery__slider--photo');
   const container = document.getElementById('all-image');
   let i = 1;
-  setInterval(() => {
+  return setInterval(() => {
     i++;
     const srcImage = gallery[i].getAttribute('src');
     container.setAttribute('src', `${srcImage}`);

@@ -3,6 +3,13 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const dotenv = require('dotenv');
+const dotenvExpand = require('dotenv-expand');
+
+const envs = dotenv.config();
+dotenvExpand.expand(envs);
+
+console.log(process.env.NODE_ENV);
 
 function resolve(filepath, fileName) {
   return path.resolve(process.cwd(), 'src', 'pages', filepath, fileName)

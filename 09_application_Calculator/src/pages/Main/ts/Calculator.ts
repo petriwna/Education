@@ -1,11 +1,12 @@
 import {CalcInterface} from "./CalcInterface";
 
 export class Calculator implements CalcInterface{
-  a: number;
+  private a: number;
   onDisplayUpdateHandlers: Array<Function>;
 
   constructor() {
     this.onDisplayUpdateHandlers = [];
+    this.a = 0;
   }
 
   saveA(a: number): number {
@@ -69,9 +70,13 @@ export class Calculator implements CalcInterface{
   }
 
   clearAll(): number {
-
-    console.log(this.a + ' clear')
+    console.log('clear')
     return this.a = 0;
+  }
+
+  handleDisplayUpdate(val: string): void {
+    const display: HTMLElement = document.getElementById('display');
+    display.innerText = val ? val : '0';
   }
 
 }

@@ -4,6 +4,7 @@ import {renderBigPhoto} from "./renderBigPhoto";
 import {setImageToSlide} from "./setImageToSlide";
 
 export class Gallery implements IGallery{
+
   getImages() {
     const bigPhoto = document.getElementById('big-photo');
     return fetch('https://jsonplaceholder.typicode.com/photos')
@@ -11,7 +12,7 @@ export class Gallery implements IGallery{
       .then(data => {
         bigPhoto.setAttribute('src', `${data[0].url}`)
         const images = data.slice(0, 20);
-          images.forEach(img => renderImage(img.url, img.id));
+          images.forEach(img => renderImage(img.url, img.id, img.title));
       });
   }
 
@@ -45,7 +46,8 @@ export class Gallery implements IGallery{
     const btnClose = document.getElementById('close');
     const modal = document.getElementById('modal');
     btnClose.addEventListener('click', () => {
-      modal.classList.add('hide')
+      clearTimeout();
+      modal.classList.add('hide');
     });
   }
 }

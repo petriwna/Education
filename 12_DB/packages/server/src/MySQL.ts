@@ -16,4 +16,15 @@ export class MySQL{
             }
         })
     }
+
+    async queryAll(str, cb) {
+        this.connect.query(str, (e, rows, fields) => {
+            if (e) {
+                console.log(e)
+            } else {
+                console.log(rows);
+                cb(rows);
+            }
+        })
+    }
 }

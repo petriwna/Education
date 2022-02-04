@@ -15,4 +15,6 @@ export interface CalcInterface {
   constant: () => number
   multipToTenPower: (b: number) => number
   clearAll: () => number
+
+  handleDisplayUpdate: (val: string) => void
 }
