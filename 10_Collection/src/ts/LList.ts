@@ -1,9 +1,10 @@
 import {IList} from './types'
 
 class Node {
-    private value: number;
+    value: number;
     next: Node;
-    constructor(value: number, next?:Node) {
+
+    constructor(value: number, next?: Node) {
         this.value = value;
         this.next = next || null;
     }
@@ -14,18 +15,33 @@ export class LList implements IList {
     private size: number;
     private tail: Node | null;
 
-    constructor(input: number) {
-        this.root = null;
-        this.tail = null;
-        this.size = 0;
+    constructor(input) {
+        if (input && Array.isArray(input)) {
+            for (let i = 0; i < input.length; i++) {
+                this.add(input[i])
+            }
+        } else if (input && typeof input === 'number') {
+            for (let i = 0; i < input; i++) {
+                this.add(0)
+            }
+        } else if (!input) {
+            this.root = null;
+            this.tail = null;
+            this.size = 0;
+        } else {
+            throw new Error('Invalid input data')
+        }
     }
 
     add(item): void {
-        if (this.root !== null){
-            this.root.next = new Node(item)
+        const node = new Node(item);
+
+        if(!this.root) {
+            this.root = node;
+        } else {
+            this.tail.next = node;
         }
-        this.root = new Node(item);
-        this.size++
+        this.tail = node;
     }
 
     clear(): void {
@@ -33,7 +49,13 @@ export class LList implements IList {
     }
 
     getSize(): number {
-        return 0;
+        let current = this.root;
+        this.size = 0
+        while(current) {
+            this.size++;
+            current = current.next;
+        }
+        return this.size;
     }
 
     set(item, idx): void {
@@ -47,7 +69,13 @@ export class LList implements IList {
     }
 
     toArray(): number[] {
-        return [];
+        const array = []
+        let current = this.root
+        while (current) {
+            array[array.length] = current.value
+            current = current.next
+        }
+        return array;
     }
 
     toString(): string {
@@ -86,9 +114,14 @@ export class LList implements IList {
     removeAll(items: number[]): void {
     }
 
-    sort(): void {
+    print(): void {
+        let current = this.root;
+        while(current) {
+            console.log(current.value);
+            current = current.next;
+        }
     }
 
-    print(): void {
+    sort(): void {
     }
 }

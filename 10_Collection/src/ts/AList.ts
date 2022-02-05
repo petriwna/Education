@@ -118,6 +118,7 @@ export class AList implements IList {
     }
 
     removeAll(items: number[]): void {
+
     }
 
     sort(): void {
