@@ -12,11 +12,34 @@ export class AList implements IList {
     add(item): void {
         this.array[this.size] = item;
         this.size++;
+        console.log(this.array.length)
     }
 
     clear(): void {
         this.array.length = 0;
         this.size = 0;
+    }
+
+    getSize(): number {
+        return this.array.length;
+    }
+
+    get(idx): number {
+        return this.array[idx];
+    }
+
+    set(item, idx): void {
+    }
+
+    remove(item): void {
+    }
+
+    toArray(): number[] {
+        return [];
+    }
+
+    toString(): string {
+        return '';
     }
 
     contains(item): boolean {
@@ -28,27 +51,12 @@ export class AList implements IList {
         return false;
     }
 
-    get(idx): number {
-        return this.array[idx];
-    }
-
-    getSize(): number {
-        return this.array.length;
-    }
-
-    halfRevers(): void {
-    }
-
-    maxIndex(): number {
-        let max = this.array[0];
-        let maxIndex = 0;
+    minValue(): number {
+        let min = this.array[0];
         for (let i = 0; i < this.array.length; i++) {
-            if (max < this.array[i]) {
-                max = this.array[i];
-                maxIndex = i;
-            }
+            if (min > this.array[i]) min = this.array[i];
         }
-        return maxIndex;
+        return min;
     }
 
     maxValue(): number {
@@ -71,40 +79,37 @@ export class AList implements IList {
         return minIndex;
     }
 
-    minValue(): number {
-        let min = this.array[0];
+    maxIndex(): number {
+        let max = this.array[0];
+        let maxIndex = 0;
         for (let i = 0; i < this.array.length; i++) {
-            if (min > this.array[i]) min = this.array[i];
+            if (max < this.array[i]) {
+                max = this.array[i];
+                maxIndex = i;
+            }
         }
-        return min;
+        return maxIndex;
+    }
+
+    revers(): void {
+    }
+
+    halfRevers(): void {
+    }
+
+    retainAll(items: number[]): void {
+    }
+
+    removeAll(items: number[]): void {
+    }
+
+    sort(): void {
     }
 
     print(): void {
         for (let i = 0; i < this.array.length; i++){
             console.log(this.array[i]);
         }
-    }
-
-    remove(item): void {
-    }
-
-    removeAll(items: number[]): void {
-    }
-
-    retainAll(items: number[]): void {
-    }
-
-    revers(): void {
-    }
-
-    set(item, idx): void {
-    }
-
-    sort(): void {
-    }
-
-    toArray(): number[] {
-        return [];
     }
 }
 

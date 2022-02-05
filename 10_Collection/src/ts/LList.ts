@@ -13,21 +13,11 @@ export class LList implements IList {
     private root: Node | null;
     private size: number;
     private tail: Node | null;
-    // constructor()
-    // constructor({input}: { input: number[] })
+
     constructor(input: number) {
         this.root = null;
         this.tail = null;
         this.size = 0;
-        // if (input && Array.isArray(input)) {
-        //
-        // } else if (input && typeof input === 'number') {
-        //
-        // } else if (!input) {
-        //
-        // } else {
-        //     throw new Error('Invalid input data!');
-        // }
     }
 
     add(item): void {
@@ -42,22 +32,33 @@ export class LList implements IList {
         this.root = null;
     }
 
-    contains(item): boolean {
-        return false;
+    getSize(): number {
+        return 0;
+    }
+
+    set(item, idx): void {
     }
 
     get(idx): number {
         return 0;
     }
 
-    getSize(): number {
-        return 0;
+    remove(item): void {
     }
 
-    halfRevers(): void {
+    toArray(): number[] {
+        return [];
     }
 
-    maxIndex(): number {
+    toString(): string {
+        return '';
+    }
+
+    contains(item): boolean {
+        return false;
+    }
+
+    minValue(): number {
         return 0;
     }
 
@@ -69,33 +70,25 @@ export class LList implements IList {
         return 0;
     }
 
-    minValue(): number {
+    maxIndex(): number {
         return 0;
-    }
-
-    print(): void {
-    }
-
-    remove(item): void {
-    }
-
-    removeAll(items: number[]): void {
-    }
-
-    retainAll(items: number[]): void {
     }
 
     revers(): void {
     }
 
-    set(item, idx): void {
+    halfRevers(): void {
+    }
+
+    retainAll(items: number[]): void {
+    }
+
+    removeAll(items: number[]): void {
     }
 
     sort(): void {
     }
 
-    toArray(): number[] {
-        return [];
+    print(): void {
     }
-
 }

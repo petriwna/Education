@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "ES5",
+    "target": "es2019",
     "sourceMap": true
   },
-  "moduleResulution": "node",
+  "moduleResolution": "node",
   "lib": ["ES2019"],
   "noEmit": true,
   "baseUrl": "./",
-  "include": ["src/ts/**/*.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": [
     "node_modules"
   ]
