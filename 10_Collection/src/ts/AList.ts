@@ -4,15 +4,14 @@ export class AList implements IList {
     private array: number[];
     private size: number;
 
-    constructor() {
-        this.array = [];
-        this.size = 0;
+    constructor(array) {
+        this.array = array || [];
+        this.size = this.array.length || 0;
     }
 
     add(item): void {
         this.array[this.size] = item;
         this.size++;
-        console.log(this.array.length)
     }
 
     clear(): void {
@@ -21,7 +20,7 @@ export class AList implements IList {
     }
 
     getSize(): number {
-        return this.array.length;
+        return this.size;
     }
 
     get(idx): number {
@@ -29,17 +28,23 @@ export class AList implements IList {
     }
 
     set(item, idx): void {
+        this.array[idx] = item;
     }
 
     remove(item): void {
+
     }
 
     toArray(): number[] {
-        return [];
+        return this.array;
     }
 
     toString(): string {
-        return '';
+        let str = '';
+        for (let i = 0; i < this.size; i++) {
+            str = str + this.array[i];
+        }
+        return str;
     }
 
     contains(item): boolean {
@@ -53,7 +58,7 @@ export class AList implements IList {
 
     minValue(): number {
         let min = this.array[0];
-        for (let i = 0; i < this.array.length; i++) {
+        for (let i = 0; i < this.size; i++) {
             if (min > this.array[i]) min = this.array[i];
         }
         return min;
@@ -61,7 +66,7 @@ export class AList implements IList {
 
     maxValue(): number {
         let max = this.array[0];
-        for (let i = 0; i < this.array.length; i++) {
+        for (let i = 0; i < this.size; i++) {
             if (max < this.array[i]) max = this.array[i];
         }
         return max;
@@ -70,7 +75,7 @@ export class AList implements IList {
     minIndex(): number {
         let min = this.array[0];
         let minIndex = 0;
-        for (let i = 0; i < this.array.length; i++) {
+        for (let i = 0; i < this.size; i++) {
             if (min > this.array[i]) {
                 min = this.array[i];
                 minIndex = i;
@@ -82,7 +87,7 @@ export class AList implements IList {
     maxIndex(): number {
         let max = this.array[0];
         let maxIndex = 0;
-        for (let i = 0; i < this.array.length; i++) {
+        for (let i = 0; i < this.size; i++) {
             if (max < this.array[i]) {
                 max = this.array[i];
                 maxIndex = i;
@@ -92,9 +97,21 @@ export class AList implements IList {
     }
 
     revers(): void {
+        for (let i = 0, j = this.size - 1; i < j; i++, j--) {
+            const tmp = this.array[i];
+            this.array[i] = this.array[j];
+            this.array[j] = tmp
+        }
     }
 
     halfRevers(): void {
+        const firstHalf = Math.ceil(this.size / 2);
+        const secondHalf = this.size - firstHalf;
+        for (let i = 0; i < firstHalf; i++) {
+            const temp = this.array[i];
+            this.array[i] = this.array[secondHalf + i];
+            this.array[secondHalf + i] = temp;
+        }
     }
 
     retainAll(items: number[]): void {
@@ -104,15 +121,12 @@ export class AList implements IList {
     }
 
     sort(): void {
+
     }
 
     print(): void {
-        for (let i = 0; i < this.array.length; i++){
+        for (let i = 0; i < this.size; i++) {
             console.log(this.array[i]);
         }
     }
 }
-
-const aList = new AList();
-const ar = [0, 1, 3];
-console.log(aList.add(ar));
