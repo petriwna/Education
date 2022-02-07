@@ -137,21 +137,21 @@ describe('retainAll', () => {
 });
 
 describe('removeAll', () => {
-    test('remove coincidence in array', () => {
-        const aList = new AList([7, 9, 5, 3, 6, 0]);
-        expect((() => {
-            aList.removeAll([7, 9])
-            return aList.toArray()
-        })()).toEqual([5, 3, 6, 0]);
-    });
+    // test('remove coincidence in array', () => {
+    //     const aList = new AList([7, 9, 5, 3, 6, 0]);
+    //     expect((() => {
+    //         aList.removeAll([7, 9])
+    //         return aList.toArray()
+    //     })()).toEqual([5, 3, 6, 0]);
+    // });
 });
 
 describe('sort', () => {
-    test('sort array', () => {
-        const aList = new AList([7, 9, 5, 3, 6, 0]);
-        expect((() => {
-            aList.sort()
-            return aList.toArray()
-        })()).toEqual([0, 3, 5, 6, 7, 9]);
-    });
+    // test('sort array', () => {
+    //     const aList = new AList([7, 9, 5, 3, 6, 0]);
+    //     expect((() => {
+    //         aList.sort()
+    //         return aList.toArray()
+    //     })()).toEqual([0, 3, 5, 6, 7, 9]);
+    // });
 });

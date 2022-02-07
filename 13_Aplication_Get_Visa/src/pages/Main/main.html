@@ -2,9 +2,112 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Get Visa</title>
 </head>
 <body>
+<section class="content">
+  <section id="form" class="content__form">
+    <section class="content__form--container">
+      <label class="content__form--label">Name</label>
+      <input id="name" type="text" class="content__form--input" placeholder="Enter student name...">
 
+      <button id="name_generate" class="content__form--generate-btn">Generate</button>
+    </section>
+
+    <section class="content__form--container">
+      <label class="content__form--label">Balance</label>
+      <input id="balance" type="text" class="content__form--input" placeholder="Enter balance...">
+
+      <button id="balance_generate" class="content__form--generate-btn">Generate</button>
+    </section>
+
+    <section class="content__form--container">
+      <label class="content__form--label">Age</label>
+      <input id="age" type="text" class="content__form--input" placeholder="Enter student age...">
+
+      <button id="age_generate" class="content__form--generate-btn">Generate</button>
+    </section>
+
+    <section class="content__form--container">
+      <label class="content__form--label">Document</label>
+      <input id="document" type="text" class="content__form--input" placeholder="Enter documents...">
+
+      <button id="document_generate" class="content__form--generate-btn">Generate</button>
+    </section>
+
+    <section class="content__form--container">
+      <label class="content__form--label">English level</label>
+      <input id="english" type="text" class="content__form--input" placeholder="Enter student english level...">
+
+      <button id="english_generate" class="content__form--generate-btn">Generate</button>
+    </section>
+  </section>
+  <section class="content__buttons">
+    <section class="content__buttons--wrapper">
+      <button id="generate_all" class="content__buttons--btn content__buttons--generateAll">Generate all</button>
+      <button id="add_candidate" class="content__buttons--btn content__buttons--addCandidate">Add candidate</button>
+    </section>
+    <section class="content__buttons--wrapper">
+      <button id="init" class="content__buttons--btn content__buttons--init">Init</button>
+      <button id="race" class="content__buttons--btn content__buttons--race">Race</button>
+    </section>
+    <section class="content__buttons--wrapper">
+      <button id="clear" class="content__buttons--btn content__buttons--clear">Clear</button>
+    </section>
+  </section>
+
+</section>
+<section class="container hide">
+  <table class="container__table">
+    <thead class="container__table--thead">
+    <tr class="container__table--thead-row">
+      <th class="container__table--thead-th"></th>
+      <th class="container__table--thead-th namePerson" data-table="namePerson" data-id="1"></th>
+      <th class="container__table--thead-th namePerson" data-table="namePerson" data-id="2"></th>
+      <th class="container__table--thead-th namePerson" data-table="namePerson" data-id="3"></th>
+      <th class="container__table--thead-th namePerson" data-table="namePerson" data-id="4"></th>
+      <th class="container__table--thead-th namePerson" data-table="namePerson" data-id="5"></th>
+    </tr>
+    </thead>
+    <tbody class="container__table--tbody">
+    <tr>
+      <th class="container__table--tbody-td">Balance
+      </td>
+      <td class="container__table--tbody-td balancePerson" data-table="balance" data-id="1"></td>
+      <td class="container__table--tbody-td balancePerson" data-table="balance" data-id="2"></td>
+      <td class="container__table--tbody-td balancePerson" data-table="balance" data-id="3"></td>
+      <td class="container__table--tbody-td balancePerson" data-table="balance" data-id="4"></td>
+      <td class="container__table--tbody-td balancePerson" data-table="balance" data-id="5"></td>
+    </tr>
+    <tr>
+      <th class="container__table--tbody-td">Age
+      </td>
+      <td class="container__table--tbody-td agePerson" data-table="age" data-id="1"></td>
+      <td class="container__table--tbody-td  agePerson" data-table="age" data-id="2"></td>
+      <td class="container__table--tbody-td  agePerson" data-table="age" data-id="3"></td>
+      <td class="container__table--tbody-td  agePerson" data-table="age" data-id="4"></td>
+      <td class="container__table--tbody-td  agePerson" data-table="age" data-id="5"></td>
+    </tr>
+    <tr>
+      <th class="container__table--tbody-td">Documents
+      </td>
+      <td class="container__table--tbody-td documentsPerson" data-table="documents" data-id="1"></td>
+      <td class="container__table--tbody-td documentsPerson" data-table="documents" data-id="2"></td>
+      <td class="container__table--tbody-td documentsPerson" data-table="documents" data-id="3"></td>
+      <td class="container__table--tbody-td documentsPerson" data-table="documents" data-id="4"></td>
+      <td class="container__table--tbody-td documentsPerson" data-table="documents" data-id="5"></td>
+    </tr>
+    <tr>
+      <th class="container__table--tbody-td">English
+      </td>
+      <td class="container__table--tbody-td englishPerson" data-table="english" data-id="1"></td>
+      <td class="container__table--tbody-td englishPerson" data-table="english" data-id="2"></td>
+      <td class="container__table--tbody-td englishPerson" data-table="english" data-id="3"></td>
+      <td class="container__table--tbody-td englishPerson" data-table="english" data-id="4"></td>
+      <td class="container__table--tbody-td englishPerson" data-table="english" data-id="5"></td>
+    </tr>
+    </tbody>
+  </table>
+</section>
 </body>
 </html>
