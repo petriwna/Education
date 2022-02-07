@@ -16,21 +16,21 @@
 
     <section class="content__form--container">
       <label class="content__form--label">Balance</label>
-      <input id="balance" type="text" class="content__form--input" placeholder="Enter balance...">
+      <input id="balance" type="number" class="content__form--input" placeholder="Enter balance...">
 
       <button id="balance_generate" class="content__form--generate-btn">Generate</button>
     </section>
 
     <section class="content__form--container">
       <label class="content__form--label">Age</label>
-      <input id="age" type="text" class="content__form--input" placeholder="Enter student age...">
+      <input id="age" type="number" class="content__form--input" placeholder="Enter student age...">
 
       <button id="age_generate" class="content__form--generate-btn">Generate</button>
     </section>
 
     <section class="content__form--container">
       <label class="content__form--label">Document</label>
-      <input id="document" type="text" class="content__form--input" placeholder="Enter documents...">
+      <input id="document" type="number" min="-5" max="3" class="content__form--input" placeholder="Enter documents...">
 
       <button id="document_generate" class="content__form--generate-btn">Generate</button>
     </section>
@@ -57,54 +57,50 @@
   </section>
 
 </section>
-<section class="container hide">
+<section id="table"  class="container  hide">
   <table class="container__table">
     <thead class="container__table--thead">
     <tr class="container__table--thead-row">
-      <th class="container__table--thead-th"></th>
-      <th class="container__table--thead-th namePerson" data-table="namePerson" data-id="1"></th>
-      <th class="container__table--thead-th namePerson" data-table="namePerson" data-id="2"></th>
-      <th class="container__table--thead-th namePerson" data-table="namePerson" data-id="3"></th>
-      <th class="container__table--thead-th namePerson" data-table="namePerson" data-id="4"></th>
-      <th class="container__table--thead-th namePerson" data-table="namePerson" data-id="5"></th>
+      <td class="container__table--thead-th">Name</td>
+      <th class="container__table--thead-th" data-table="namePerson" data-id="1"></th>
+      <th class="container__table--thead-th" data-table="namePerson" data-id="2"></th>
+      <th class="container__table--thead-th" data-table="namePerson" data-id="3"></th>
+      <th class="container__table--thead-th" data-table="namePerson" data-id="4"></th>
+      <th class="container__table--thead-th" data-table="namePerson" data-id="5"></th>
     </tr>
     </thead>
     <tbody class="container__table--tbody">
     <tr>
-      <th class="container__table--tbody-td">Balance
-      </td>
-      <td class="container__table--tbody-td balancePerson" data-table="balance" data-id="1"></td>
-      <td class="container__table--tbody-td balancePerson" data-table="balance" data-id="2"></td>
-      <td class="container__table--tbody-td balancePerson" data-table="balance" data-id="3"></td>
-      <td class="container__table--tbody-td balancePerson" data-table="balance" data-id="4"></td>
-      <td class="container__table--tbody-td balancePerson" data-table="balance" data-id="5"></td>
+      <td class="container__table--tbody-td">Balance</td>
+      <td class="container__table--tbody-td" data-table="balance" data-id="1"></td>
+      <td class="container__table--tbody-td" data-table="balance" data-id="2"></td>
+      <td class="container__table--tbody-td" data-table="balance" data-id="3"></td>
+      <td class="container__table--tbody-td" data-table="balance" data-id="4"></td>
+      <td class="container__table--tbody-td" data-table="balance" data-id="5"></td>
     </tr>
     <tr>
-      <th class="container__table--tbody-td">Age
-      </td>
-      <td class="container__table--tbody-td agePerson" data-table="age" data-id="1"></td>
-      <td class="container__table--tbody-td  agePerson" data-table="age" data-id="2"></td>
-      <td class="container__table--tbody-td  agePerson" data-table="age" data-id="3"></td>
-      <td class="container__table--tbody-td  agePerson" data-table="age" data-id="4"></td>
-      <td class="container__table--tbody-td  agePerson" data-table="age" data-id="5"></td>
+      <td class="container__table--tbody-td">Age</td>
+      <td class="container__table--tbody-td" data-table="age" data-id="1"></td>
+      <td class="container__table--tbody-td" data-table="age" data-id="2"></td>
+      <td class="container__table--tbody-td" data-table="age" data-id="3"></td>
+      <td class="container__table--tbody-td" data-table="age" data-id="4"></td>
+      <td class="container__table--tbody-td" data-table="age" data-id="5"></td>
     </tr>
     <tr>
-      <th class="container__table--tbody-td">Documents
-      </td>
-      <td class="container__table--tbody-td documentsPerson" data-table="documents" data-id="1"></td>
-      <td class="container__table--tbody-td documentsPerson" data-table="documents" data-id="2"></td>
-      <td class="container__table--tbody-td documentsPerson" data-table="documents" data-id="3"></td>
-      <td class="container__table--tbody-td documentsPerson" data-table="documents" data-id="4"></td>
-      <td class="container__table--tbody-td documentsPerson" data-table="documents" data-id="5"></td>
+      <td class="container__table--tbody-td">Documents</td>
+      <td class="container__table--tbody-td" data-table="documents" data-id="1"></td>
+      <td class="container__table--tbody-td" data-table="documents" data-id="2"></td>
+      <td class="container__table--tbody-td" data-table="documents" data-id="3"></td>
+      <td class="container__table--tbody-td" data-table="documents" data-id="4"></td>
+      <td class="container__table--tbody-td" data-table="documents" data-id="5"></td>
     </tr>
     <tr>
-      <th class="container__table--tbody-td">English
-      </td>
-      <td class="container__table--tbody-td englishPerson" data-table="english" data-id="1"></td>
-      <td class="container__table--tbody-td englishPerson" data-table="english" data-id="2"></td>
-      <td class="container__table--tbody-td englishPerson" data-table="english" data-id="3"></td>
-      <td class="container__table--tbody-td englishPerson" data-table="english" data-id="4"></td>
-      <td class="container__table--tbody-td englishPerson" data-table="english" data-id="5"></td>
+      <td class="container__table--tbody-td">English</td>
+      <td class="container__table--tbody-td" data-table="english" data-id="1"></td>
+      <td class="container__table--tbody-td" data-table="english" data-id="2"></td>
+      <td class="container__table--tbody-td" data-table="english" data-id="3"></td>
+      <td class="container__table--tbody-td" data-table="english" data-id="4"></td>
+      <td class="container__table--tbody-td" data-table="english" data-id="5"></td>
     </tr>
     </tbody>
   </table>

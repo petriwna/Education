@@ -48,5 +48,4 @@ export class Candidate implements ICandidate {
     const random = Math.floor(Math.random() * 10);
     return el.value = names[random];
   }
-
 }
