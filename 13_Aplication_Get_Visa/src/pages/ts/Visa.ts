@@ -1,6 +1,7 @@
 import {IVisa} from "./IVisa";
 import {Candidate} from "./Cadidate";
 import {checkInputValue} from "./checkInputValue";
+import {renderTableCandidate} from "./renderTableCandidate";
 
 export class Visa implements IVisa {
 
@@ -54,21 +55,27 @@ export class Visa implements IVisa {
   }
 
   addCandidate() {
-    // const btnAdd = document.getElementById('add_candidate');
-    // const inputs:HTMLInputElement = document.querySelectorAll('input');
-    //
-    // btnAdd.addEventListener('click', () => {
-    //   if (inputs.value === ''){
-    //     btnAdd.disable
-    //   }
-    // });
+    const btnAdd = <HTMLButtonElement>document.getElementById('add_candidate');
+    const race = <HTMLButtonElement>document.getElementById('race');
+    const btnsGener: NodeListOf<HTMLButtonElement> = document.querySelectorAll('.generate');
+    const name: HTMLElement = document.getElementById('name');
+    const balance = document.getElementById('balance');
+    const age = document.getElementById('age');
+    const doc = document.getElementById('document');
+    const level = document.getElementById('english');
+    let column = 0
+
+    btnAdd.addEventListener('click', () => {
+      // if (candidates === 5) {
+      //   btnAdd.disabled = true;
+      //   race.disabled = false;
+        btnsGener.forEach(el => {
+          el.disabled = true;
+        });
+      // }
+      renderTableCandidate(column++, name, balance, age, doc, level)
+
+    });
   }
 
-  checkInputValue(name, balance, age, doc, level, el) {
-    if (name.value === '' && balance.value === '' && age.value === '' && doc.value === '' && level.value === '') {
-      el.disabled = true;
-    } else{
-      el.disabled = false;
-    }
-  }
 }
