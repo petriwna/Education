@@ -1,3 +1,5 @@
+import * as events from "events";
+
 export interface CalcInterface {
   saveA: (a: number) => number
   sum: (b: number) => number

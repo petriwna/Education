@@ -1,11 +1,18 @@
 import {CalcInterface} from "./CalcInterface";
+import {updateDisplay} from "./updateDisplay";
+import {inputDisplay} from "./inputDisplay";
 
-export class Calculator implements CalcInterface{
-  a: number;
-  onDisplayUpdateHandlers: Array<Function>;
+export class Calculator implements CalcInterface {
+  displayValue: string;
+  firstOperand: string;
+  waitingForSecondOperand: boolean;
+  operator: string;
 
   constructor() {
-    this.onDisplayUpdateHandlers = [];
+    this.displayValue = '0';
+    this.firstOperand = null;
+    this.waitingForSecondOperand = false;
+    this.operator = null;
   }
 
   saveA(a: number): number {
@@ -29,7 +36,7 @@ export class Calculator implements CalcInterface{
   }
 
   power(b: number): number {
-    return Math.pow(this.a, b) ;
+    return Math.pow(this.a, b);
   }
 
   squared(): number {
@@ -53,7 +60,7 @@ export class Calculator implements CalcInterface{
   }
 
   oneDivision(): number {
-    return 1/this.a;
+    return 1 / this.a;
   }
 
   pi(): number {
@@ -65,13 +72,36 @@ export class Calculator implements CalcInterface{
   }
 
   multipToTenPower(b: number): number {
-    return this.a*(Math.pow(10, b));
+    return this.a * (Math.pow(10, b));
   }
 
   clearAll(): number {
-
-    console.log(this.a + ' clear')
-    return this.a = 0;
+    return 0;
   }
 
+  handlerButtons(event){
+    if (event.target.dataset.type === 'operator') {
+      console.log('operator', event.target.value);
+      return;
+    }
+
+    if (event.target.dataset.type === 'decimal') {
+      console.log('decimal', event.target.value);
+      return;
+    }
+
+    if (event.target.dataset.type === 'all-clear') {
+      console.log('clear', event.target.value);
+      return;
+    }
+    this.inputDisplay(event.target.value);
+    updateDisplay(this.displayValue);
+  }
+
+  inputDisplay(digit){
+    console.log(this.displayValue)
+    this.displayValue = this.displayValue === '0' ? digit : this.displayValue + digit;
+
+    console.log(this.displayValue)
+  }
 }

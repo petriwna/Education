@@ -9,68 +9,68 @@
 </head>
 <body>
 
-<table class="content__calculator">
+<table id="table" class="content__calculator">
   <tr>
-    <td colspan="10" class="content__calculator--cell-display"><p id="display" class="content__calculator--display">0</td>
+    <td colspan="10" class="content__calculator--cell-display"><input type="text" id="display" class="content__calculator--display" value="" disabled></td>
   </tr>
   <tr class="str">
-    <td class="content__calculator--cell"><button id="open_bracket" class="content__calculator--button" data-value="(" data-type="operator">(</button></td>
-    <td class="content__calculator--cell"><button id="close_bracket" class="content__calculator--button" data-value=")" data-type="operator">)</button></td>
-    <td class="content__calculator--cell"><button id="mc" class="content__calculator--button" data-value="mc" data-type="operator">mc</button></td>
-    <td class="content__calculator--cell"><button id="m-plus" class="content__calculator--button" data-value="m+" data-type="operator">m+</button></td>
-    <td class="content__calculator--cell"><button id="m-subtr" class="content__calculator--button" data-value="m-" data-type="operator">m-</button></td>
-    <td class="content__calculator--cell"><button id="mr" class="content__calculator--button" data-value="mr" data-type="operator">mr</button></td>
-    <td class="content__calculator--cell"><button id="clear" class="content__calculator--button" data-value="clear" data-type="operator">AC</button></td>
-    <td class="content__calculator--cell"><button id="plus-subtr" class="content__calculator--button" data-value="+/-" data-type="operator">+/-</button></td>
-    <td class="content__calculator--cell"><button id="percent" class="content__calculator--button" data-value="%" data-type="operator">%</button></td>
-    <td class="content__calculator--cell"><button id="division" class="content__calculator--button content__calculator--orange" data-value="/" data-type="operator">/</button></td>
+    <td class="content__calculator--cell"><input type="button" value="(" id="open_bracket" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value=")" id="close_bracket" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value="mc" id="mc" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value="m+" id="m-plus" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value="m-" id="m-subtr" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value="mr" id="mr" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value="AC" id="clear" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value="+/-" id="plus-subtr" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value="%" id="percent" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value="/" id="division" class="content__calculator--button content__calculator--orange" data-type="operator"></td>
   </tr>
   <tr>
-    <td class="content__calculator--cell"><button id="two-nd" class="content__calculator--button" data-value="2nd" data-type="operator">2nd</button></td>
-    <td class="content__calculator--cell"><button id="x-pow-two" class="content__calculator--button" data-value="x2" data-type="operator">x2</button></td>
-    <td class="content__calculator--cell"><button id="x-pow-three" class="content__calculator--button" data-value="x3" data-type="operator">x3</button></td>
-    <td class="content__calculator--cell"><button id="x-pow-y" class="content__calculator--button" data-value="xy" data-type="operator">xy</button></td>
-    <td class="content__calculator--cell"><button id="exponential-pow-x" class="content__calculator--button" data-value="ex" data-type="operator">ex</button></td>
-    <td class="content__calculator--cell"><button id="ten-pow-x" class="content__calculator--button" data-value="clear" data-type="10x">10x</button></td>
-    <td class="content__calculator--cell"><button id="seven" class="content__calculator--button content__calculator--white" data-value="7" data-type="number">7</button></td>
-    <td class="content__calculator--cell"><button id="eight" class="content__calculator--button content__calculator--white" data-value="8" data-type="number">8</button></td>
-    <td class="content__calculator--cell"><button id="nine" class="content__calculator--button content__calculator--white" data-value="9" data-type="number">9</button></td>
-    <td class="content__calculator--cell"><button id="multiplication" class="content__calculator--button content__calculator--orange" data-value="*" data-type="operator">x</button></td>
+    <td class="content__calculator--cell"><input type="button" value="2nd" id="two-nd" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value="x2" id="x-pow-two" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value="x3" id="x-pow-three" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value="xy" id="x-pow-y" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value="ex" id="exponential-pow-x" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value="10x" id="ten-pow-x" class="content__calculator--button" data-type="10x"></td>
+    <td class="content__calculator--cell"><input type="button" value="7" id="seven" class="content__calculator--button content__calculator--white" data-type="number"></td>
+    <td class="content__calculator--cell"><input type="button" value="8" id="eight" class="content__calculator--button content__calculator--white" data-type="number"></td>
+    <td class="content__calculator--cell"><input type="button" value="9" id="nine" class="content__calculator--button content__calculator--white" data-type="number"></td>
+    <td class="content__calculator--cell"><input type="button" value="x" id="multiplication" class="content__calculator--button content__calculator--orange" data-type="operator"></td>
   </tr>
   <tr>
-    <td class="content__calculator--cell"><button id="one-divisi-x" class="content__calculator--button" data-value="1/x" data-type="operator">1/x</button></td>
-    <td class="content__calculator--cell"><button id="two-sqrt-x" class="content__calculator--button" data-value="2√x" data-type="operator">2√x</button></td>
-    <td class="content__calculator--cell"><button id="three-sqrt-x" class="content__calculator--button" data-value="3√x" data-type="operator">3√x</button></td>
-    <td class="content__calculator--cell"><button id="y-sqrt-x" class="content__calculator--button" data-value="y√x" data-type="operator">y√x</button></td>
-    <td class="content__calculator--cell"><button id="in" class="content__calculator--button" data-value="In" data-type="operator">In</button></td>
-    <td class="content__calculator--cell"><button id="log" class="content__calculator--button" data-value="log" data-type="operator">log</button></td>
-    <td class="content__calculator--cell"><button id="four" class="content__calculator--button content__calculator--white" data-value="4" data-type="number">4</button></td>
-    <td class="content__calculator--cell"><button id="five" class="content__calculator--button content__calculator--white" data-value="5" data-type="number">5</button></td>
-    <td class="content__calculator--cell"><button id="six" class="content__calculator--button content__calculator--white" data-value="6" data-type="number">6</button></td>
-    <td class="content__calculator--cell"><button id="subtraction" class="content__calculator--button content__calculator--orange" data-value="-" data-type="operator">-</button></td>
+    <td class="content__calculator--cell"><input type="button" value="1/x" id="one-divisi-x" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value="2√x" id="two-sqrt-x" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value="3√x" id="three-sqrt-x" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value="y√x" id="y-sqrt-x" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value="In" id="in" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value="log" id="log" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value="4" id="four" class="content__calculator--button content__calculator--white" data-type="number"></td>
+    <td class="content__calculator--cell"><input type="button" value="5" id="five" class="content__calculator--button content__calculator--white" data-type="number"></td>
+    <td class="content__calculator--cell"><input type="button" value="6" id="six" class="content__calculator--button content__calculator--white" data-type="number"></td>
+    <td class="content__calculator--cell"><input type="button" value="-" id="subtraction" class="content__calculator--button content__calculator--orange" data-type="operator"></td>
   </tr>
   <tr>
-    <td class="content__calculator--cell"><button id="factorial" class="content__calculator--button" data-value="factorial" data-type="operator">x!</button></td>
-    <td class="content__calculator--cell"><button id="sin" class="content__calculator--button" data-value="sin" data-type="operator">sin</button></td>
-    <td class="content__calculator--cell"><button id="cos" class="content__calculator--button" data-value="cos" data-type="operator">cos</button></td>
-    <td class="content__calculator--cell"><button id="tan" class="content__calculator--button" data-value="tan" data-type="operator">tan</button></td>
-    <td class="content__calculator--cell"><button id="e" class="content__calculator--button" data-value="e" data-type="operator">e</button></td>
-    <td class="content__calculator--cell"><button id="ee" class="content__calculator--button" data-value="ee" data-type="operator">EE</button></td>
-    <td class="content__calculator--cell"><button id="one" class="content__calculator--button content__calculator--white" data-value="1" data-type="number">1</button></td>
-    <td class="content__calculator--cell"><button id="two" class="content__calculator--button content__calculator--white" data-value="2" data-type="number">2</button></td>
-    <td class="content__calculator--cell"><button id="three" class="content__calculator--button content__calculator--white" data-value="3" data-type="number">3</button></td>
-    <td class="content__calculator--cell"><button id="sum" class="content__calculator--button content__calculator--orange" data-value="+" data-type="operator">+</button></td>
+    <td class="content__calculator--cell"><input type="button" value="x!" id="factorial" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value="sin" id="sin" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value="cos" id="cos" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value="tan" id="tan" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value="e" id="e" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value="EE" id="ee" class="content__calculator--button" data-type="operator"></td>
+    <td class="content__calculator--cell"><input type="button" value="1" id="one" class="content__calculator--button content__calculator--white" data-type="number"></td>
+    <td class="content__calculator--cell"><input type="button" value="2" id="two" class="content__calculator--button content__calculator--white" data-type="number"></td>
+    <td class="content__calculator--cell"><input type="button" value="3" id="three" class="content__calculator--button content__calculator--white" data-type="number"></td>
+    <td class="content__calculator--cell"><input type="button" value="+" id="sum" class="content__calculator--button content__calculator--orange" data-type="operator"></td>
   </tr>
   <tr>
-    <td class="content__calculator--cell"><button id="rad" class="content__calculator--button content__calculator--rad" data-value="rad" data-type="operator">rad</button></td>
-    <td class="content__calculator--cell"><button id="sinh" class="content__calculator--button" data-value="sinh" data-type="operator">sinh</button></td>
-    <td class="content__calculator--cell"><button id="cosh" class="content__calculator--button" data-value="cosh" data-type="operator">cosh</button></td>
-    <td class="content__calculator--cell"><button id="tanh" class="content__calculator--button" data-value="tanh" data-type="operator">tanh</button></td>
-    <td class="content__calculator--cell"><button id="pi" class="content__calculator--button" data-value="pi" data-type="operator">П</button></td>
-    <td class="content__calculator--cell"><button id="rand" class="content__calculator--button" data-value="rand" data-type="operator">Rand</button></td>
-    <td class="content__calculator--cell" colspan="2"><button id="zero" class="content__calculator--zero" data-value="0" data-type="number">0</button></td>
-    <td class="content__calculator--cell"><button id="dot" class="content__calculator--button content__calculator--white" data-value="." data-type="operator">.</button></td>
-    <td class="content__calculator--cell"><button id="equal" class="content__calculator--button content__calculator--right" data-value="+" data-type="operator">=</button></td>
+    <td class="content__calculator--cell"><input type="button" value="rad" id="rad" class="content__calculator--button content__calculator--rad" data-type="operator"/></td>
+    <td class="content__calculator--cell"><input type="button" value="sinh" id="sinh" class="content__calculator--button" data-type="operator"/></td>
+    <td class="content__calculator--cell"><input type="button" value="cosh" id="cosh" class="content__calculator--button" data-type="operator"/></td>
+    <td class="content__calculator--cell"><input type="button" value="tanh" id="tanh" class="content__calculator--button" data-type="operator"/></td>
+    <td class="content__calculator--cell"><input type="button" value="П" id="pi" class="content__calculator--button" data-type="operator"/></td>
+    <td class="content__calculator--cell"><input type="button" value="Rand" id="rand" class="content__calculator--button" data-type="operator"/></td>
+    <td class="content__calculator--cell" colspan="2"><input type="button" value="0" id="zero" class="content__calculator--zero" data-type="number"/></td>
+    <td class="content__calculator--cell"><input type="button" value="."  id="dot" class="content__calculator--button content__calculator--white" data-type="operator"/></td>
+    <td class="content__calculator--cell"><input type="button" value="="  id="equal" class="content__calculator--button content__calculator--right" data-type="operator"/></td>
   </tr>
 </table>
 </body>

@@ -1,12 +1,17 @@
 import "./styles.scss"
-import {handleBtnClick} from "./ts/handlerBtnClick";
-import {handleDisplayUpdate} from "./ts/handleDisplayUpdate";
+import {Calculator} from "./ts/Calculator";
+import {updateDisplay} from "./ts/updateDisplay";
 
 function init() {
-  const calcButton = document.querySelectorAll('button');
-  calcButton.forEach(btn => btn.addEventListener('click', handleBtnClick));
-  handleDisplayUpdate("4555555");
+  const calculator = new Calculator();
+
+  updateDisplay(calculator.displayValue);
+  const table = document.getElementById('table');
+  table.addEventListener('click', (event) => {
+    calculator.handlerButtons(event, calculator.displayValue);
+  });
 }
+
 
 document.addEventListener('DOMContentLoaded', function () {
   init();

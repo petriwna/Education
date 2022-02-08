@@ -12,6 +12,7 @@ export class Visa implements IVisa {
     const age = document.getElementById('age');
     const doc = document.getElementById('document');
     const level = document.getElementById('english');
+    const btnAdd = <HTMLButtonElement>document.getElementById('add_candidate');
 
     const btnName = document.getElementById('name_generate')
     btnName.addEventListener('click', () => candidate.getRandomName(name));
@@ -35,9 +36,9 @@ export class Visa implements IVisa {
       candidate.getRandomAge(age);
       candidate.getRandomDocument(doc);
       candidate.getRandomEnglishLevel(level);
+      btnAdd.disabled = false;
     });
 
-    const btnAdd = <HTMLButtonElement>document.getElementById('add_candidate');
     btnAdd.disabled = true;
     const inputs = document.querySelectorAll('input');
     inputs.forEach(el => {
