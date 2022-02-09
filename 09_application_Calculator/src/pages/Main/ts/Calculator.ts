@@ -1,10 +1,9 @@
 import {CalcInterface} from "./CalcInterface";
 import {updateDisplay} from "./updateDisplay";
-import {inputDisplay} from "./inputDisplay";
 
 export class Calculator implements CalcInterface {
   displayValue: string;
-  firstOperand: string;
+  firstOperand: number;
   waitingForSecondOperand: boolean;
   operator: string;
 
@@ -15,8 +14,17 @@ export class Calculator implements CalcInterface {
     this.operator = null;
   }
 
-  saveA(a: number): number {
-    return this.a = a;
+  calculation(a, b, operator){
+    if (operator === '+') {
+      return this.sum(a, b);
+    } else if (operator === '-') {
+      return this.subtraction(a, b);
+    } else if (operator === 'x') {
+      return this.multiplication(a, b);
+    } else if (operator === '/') {
+      return this.division(a, b);
+    }
+    return b;
   }
 
   constantsToPower(): number {
@@ -27,12 +35,12 @@ export class Calculator implements CalcInterface {
     return Math.pow(this.a, 3);
   }
 
-  division(b: number): number {
-    return this.a / b;
+  division(a: number, b: number): number {
+    return a / b;
   }
 
-  multiplication(b: number): number {
-    return this.a * b;
+  multiplication(a: number, b: number): number {
+    return a * b;
   }
 
   power(b: number): number {
@@ -43,12 +51,12 @@ export class Calculator implements CalcInterface {
     return Math.sqrt(this.a);
   }
 
-  subtraction(b: number): number {
-    return this.a - b;
+  subtraction(a: number, b: number): number {
+    return a - b;
   }
 
-  sum(b: number): number {
-    return this.a + b;
+  sum(a: number, b: number): number {
+    return a + b;
   }
 
   tenToPower(): number {
@@ -75,33 +83,76 @@ export class Calculator implements CalcInterface {
     return this.a * (Math.pow(10, b));
   }
 
-  clearAll(): number {
-    return 0;
+  clearAll(): void{
+    this.displayValue = '0';
+    this.firstOperand = null;
+    this.waitingForSecondOperand = false;
+    this.operator = null;
   }
 
-  handlerButtons(event){
-    if (event.target.dataset.type === 'operator') {
-      console.log('operator', event.target.value);
-      return;
+  handlerButtons(event) {
+    switch (event.target.value) {
+      case '+':
+      case '-':
+      case 'x':
+      case '/':
+      case '=':
+        this.handleOperator(event.target.value);
+        break;
+      case '.':
+        this.inputDecimal(event.target.value);
+        break;
+      case 'AC':
+        this.clearAll();
+        break;
+      default:
+        if (Number.isInteger(parseFloat(event.target.value))) {
+          this.inputDisplay(event.target.value);
+        }
     }
-
-    if (event.target.dataset.type === 'decimal') {
-      console.log('decimal', event.target.value);
-      return;
-    }
-
-    if (event.target.dataset.type === 'all-clear') {
-      console.log('clear', event.target.value);
-      return;
-    }
-    this.inputDisplay(event.target.value);
     updateDisplay(this.displayValue);
   }
 
-  inputDisplay(digit){
-    console.log(this.displayValue)
-    this.displayValue = this.displayValue === '0' ? digit : this.displayValue + digit;
+  inputDecimal(dot) {
+    if (this.waitingForSecondOperand === true){
+      this.displayValue = '0';
+      this.waitingForSecondOperand = false;
+      return;
+    }
+    if (!this.displayValue.includes(dot)) {
+      this.displayValue = this.displayValue + dot;
+    }
+  }
 
-    console.log(this.displayValue)
+  handleOperator(nextOperator) {
+    const inputValue = parseFloat(this.displayValue);
+
+    if (this.operator && this.waitingForSecondOperand) {
+      this.operator = nextOperator;
+      console.log(nextOperator);
+      return;
+    }
+
+    if (this.firstOperand === null && !isNaN(inputValue)) {
+      this.firstOperand = inputValue;
+    } else if (this.operator){
+      const result = this.calculation(this.firstOperand, inputValue, this.operator)
+      this.displayValue = String(result);
+      this.firstOperand = result;
+    }
+
+    this.waitingForSecondOperand = true;
+    this.operator = nextOperator;
+    console.log(this.displayValue, this.waitingForSecondOperand, this.operator)
+  }
+
+  inputDisplay(digit) {
+
+    if (this.waitingForSecondOperand === true) {
+      this.displayValue = digit;
+      this.waitingForSecondOperand = false;
+    } else {
+      this.displayValue = this.displayValue === '0' ? digit : this.displayValue + digit;
+    }
   }
 }

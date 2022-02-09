@@ -8,7 +8,7 @@ function init() {
   updateDisplay(calculator.displayValue);
   const table = document.getElementById('table');
   table.addEventListener('click', (event) => {
-    calculator.handlerButtons(event, calculator.displayValue);
+    calculator.handlerButtons(event);
   });
 }
 
