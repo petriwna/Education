@@ -139,7 +139,7 @@ export class Calculator implements CalcInterface {
         result = this.cube(currentInput);
         break;
       case 'ex':
-        result = this.constantsToPower(currentInput);
+        result = this.constantToPower(currentInput);
         break;
       case '10x':
         result = this.tenToPower(currentInput);
@@ -249,7 +249,7 @@ export class Calculator implements CalcInterface {
     return Math.E;
   }
 
-  constantsToPower(a): number {
+  constantToPower(a): number {
     return Math.pow(Math.E, a);
   }
 
@@ -265,10 +265,6 @@ export class Calculator implements CalcInterface {
     return a * b;
   }
 
-  squared(a): number {
-    return Math.sqrt(a);
-  }
-
   subtraction(a: number, b: number): number {
     return a - b;
   }
@@ -277,16 +273,7 @@ export class Calculator implements CalcInterface {
     return a + b;
   }
 
-  oneDivision(a): number {
-    return 1 / a;
-  }
-
   pi(): number {
     return Math.PI;
   }
-
-  multipToTenPower(a, b: number): number {
-    return a * (Math.pow(10, b));
-  }
-
 }

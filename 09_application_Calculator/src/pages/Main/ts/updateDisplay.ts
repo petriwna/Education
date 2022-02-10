@@ -1,4 +1,5 @@
 export function updateDisplay(displayValue){
-  const display: HTMLInputElement = document.getElementById('display');
+  const display = document.getElementById('display');
+  // @ts-ignore
   display.value = displayValue;
 }
