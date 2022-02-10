@@ -25,8 +25,12 @@ export class Calculator implements CalcInterface {
       return this.multiplication(a, b);
     } else if (operator === '/') {
       return this.division(a, b);
-    } else if (operator === 'xy'){
+    } else if (operator === 'xy') {
       return this.pow(a, b);
+    } else if (operator === 'y√x') {
+      return this.numSqrt(a, b);
+    } else if (operator === 'EE') {
+      return this.doubleE(a, b);
     }
     return b;
   }
@@ -46,6 +50,8 @@ export class Calculator implements CalcInterface {
       case '/':
       case '=':
       case 'xy':
+      case 'y√x':
+      case 'EE':
         this.handleOperator(event.target.value);
         break;
       case 'П':
@@ -61,6 +67,14 @@ export class Calculator implements CalcInterface {
       case 'ex':
       case '10x':
       case 'e':
+      case '1/x':
+      case '2√x':
+      case '3√x':
+      case 'ln':
+      case 'sinh':
+      case 'cosh':
+      case 'tanh':
+      case 'Rand':
         this.handlerFn(event.target.value);
         break;
       case '.':
@@ -147,6 +161,30 @@ export class Calculator implements CalcInterface {
       case 'e':
         result = this.constant();
         break;
+      case '1/x':
+        result = this.oneDividedNumber(currentInput);
+        break;
+      case '2√x':
+        result = this.sqrt(currentInput);
+        break;
+      case '3√x':
+        result = this.cubeSqrt(currentInput);
+        break;
+      case 'ln':
+        result = this.naturLog(currentInput);
+        break;
+      case 'sinh':
+        result = this.sinh(currentInput);
+        break;
+      case 'cosh':
+        result = this.cosh(currentInput);
+        break;
+      case 'tanh':
+        result = this.tanh(currentInput);
+        break;
+      case 'Rand':
+        result = this.rand();
+        break;
       default:
         result = 0;
     }
@@ -179,26 +217,22 @@ export class Calculator implements CalcInterface {
     }
   }
 
-  handlerMemory(member){
+  handlerMemory(member) {
     let currentInput = parseFloat(this.displayValue);
 
-    switch(member){
-    case 'mc':
-      this.member = 0;
-      console.log(this.member)
-      break;
-    case 'm+':
-      this.member = this.member + currentInput;
-      console.log(this.member)
-      break;
-    case 'm-':
-      this.member = this.member - currentInput;
-      console.log(this.member)
-      break;
-    case 'mr':
-      this.displayValue = String(this.member);
-      console.log(this.member)
-      break;
+    switch (member) {
+      case 'mc':
+        this.member = 0;
+        break;
+      case 'm+':
+        this.member = this.member + currentInput;
+        break;
+      case 'm-':
+        this.member = this.member - currentInput;
+        break;
+      case 'mr':
+        this.displayValue = String(this.member);
+        break;
       default:
         this.member = 0;
     }
@@ -241,7 +275,7 @@ export class Calculator implements CalcInterface {
     return Math.pow(a, 3);
   }
 
-  pow(a: number, b: number): number{
+  pow(a: number, b: number): number {
     return Math.pow(a, b);
   }
 
@@ -275,5 +309,45 @@ export class Calculator implements CalcInterface {
 
   pi(): number {
     return Math.PI;
+  }
+
+  oneDividedNumber(a: number) {
+    return 1 / a;
+  }
+
+  sqrt(a: number) {
+    return Math.sqrt(a);
+  }
+
+  cubeSqrt(a: number) {
+    return Math.cbrt(a);
+  }
+
+  numSqrt(a: number, b: number) {
+    return Math.pow(a, 1 / b);
+  }
+
+  naturLog(a: number) {
+    return Math.log(a);
+  }
+
+  doubleE(a: number, b: number) {
+    return a * (Math.pow(10, b))
+  }
+
+  sinh(a: number){
+    return Math.sinh(a);
+  }
+
+  cosh(a: number){
+    return Math.cosh(a);
+  }
+
+  tanh(a: number){
+    return Math.tanh(a);
+  }
+
+  rand(){
+    return Math.random();
   }
 }
