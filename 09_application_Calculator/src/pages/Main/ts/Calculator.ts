@@ -6,12 +6,14 @@ export class Calculator implements CalcInterface {
   firstOperand: number;
   waitingForSecondOperand: boolean;
   operator: string;
+  member: number;
 
   constructor() {
     this.displayValue = '0';
     this.firstOperand = null;
     this.waitingForSecondOperand = false;
     this.operator = null;
+    this.member = 0;
   }
 
   calculation(a, b, operator) {
@@ -58,6 +60,7 @@ export class Calculator implements CalcInterface {
       case 'x3':
       case 'ex':
       case '10x':
+      case 'e':
         this.handlerFn(event.target.value);
         break;
       case '.':
@@ -65,6 +68,12 @@ export class Calculator implements CalcInterface {
         break;
       case 'AC':
         this.clearAll();
+        break;
+      case 'mc':
+      case 'm+':
+      case 'm-':
+      case 'mr':
+        this.handlerMemory(event.target.value);
         break;
       default:
         if (Number.isInteger(parseFloat(event.target.value))) {
@@ -135,6 +144,9 @@ export class Calculator implements CalcInterface {
       case '10x':
         result = this.tenToPower(currentInput);
         break;
+      case 'e':
+        result = this.constant();
+        break;
       default:
         result = 0;
     }
@@ -164,6 +176,31 @@ export class Calculator implements CalcInterface {
     }
     if (!this.displayValue.includes(dot)) {
       this.displayValue = this.displayValue + dot;
+    }
+  }
+
+  handlerMemory(member){
+    let currentInput = parseFloat(this.displayValue);
+
+    switch(member){
+    case 'mc':
+      this.member = 0;
+      console.log(this.member)
+      break;
+    case 'm+':
+      this.member = this.member + currentInput;
+      console.log(this.member)
+      break;
+    case 'm-':
+      this.member = this.member - currentInput;
+      console.log(this.member)
+      break;
+    case 'mr':
+      this.displayValue = String(this.member);
+      console.log(this.member)
+      break;
+      default:
+        this.member = 0;
     }
   }
 
@@ -208,6 +245,10 @@ export class Calculator implements CalcInterface {
     return Math.pow(a, b);
   }
 
+  constant(): number {
+    return Math.E;
+  }
+
   constantsToPower(a): number {
     return Math.pow(Math.E, a);
   }
@@ -236,21 +277,12 @@ export class Calculator implements CalcInterface {
     return a + b;
   }
 
-
-  square(a): number {
-    return Math.pow(a, 2);
-  }
-
   oneDivision(a): number {
     return 1 / a;
   }
 
   pi(): number {
     return Math.PI;
-  }
-
-  constant(): number {
-    return Math.E;
   }
 
   multipToTenPower(a, b: number): number {

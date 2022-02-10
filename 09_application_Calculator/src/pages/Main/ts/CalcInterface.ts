@@ -8,7 +8,6 @@ export interface CalcInterface {
   cube: (a: number) => number
   constantsToPower: (a: number) => number
   tenToPower: (a: number) => number
-  square: (a: number) => number
   oneDivision: (a: number) => number
   pi: () => number
   constant: () => number
