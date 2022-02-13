@@ -28,10 +28,16 @@ export class Painter {
   }
 
   saveImage(canvas, body) {
+    const canvasContet = canvas.toDataURL();
+    const data = {image: canvasContet, data: Date.now()};
+    const string = JSON.stringify(data);
+    const file = new Blob([string], {
+      type: 'application/json'
+    });
     const a = document.createElement('a');
+    a.href = URL.createObjectURL(file);
+    a.download = 'data.json';
     body.appendChild(a);
-    a.href = canvas.toDataURL();
-    a.download = 'canvas-img.json';
     a.click();
     body.removeChild(a);
   }
