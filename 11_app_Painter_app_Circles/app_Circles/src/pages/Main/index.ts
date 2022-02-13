@@ -3,8 +3,8 @@ import {Circles} from "../ts/Circles";
 
 function init(){
   const circles = new Circles();
-  const svg = document.getElementById('svg');
-  svg.addEventListener('click', (event) => {
+  const conteiner = document.getElementById('container');
+  conteiner.addEventListener('click', (event) => {
     circles.drawCircle(event);
   });
 }
