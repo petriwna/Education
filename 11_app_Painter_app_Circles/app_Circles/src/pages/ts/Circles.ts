@@ -2,11 +2,9 @@ import {FULL_HEIGHT, FULL_WIDTH, MAX_RADIUS, MAX_SPEED, MIN_RADIUS, MIN_SPEED} f
 
 export class Circles {
   container: HTMLElement;
-  speed: number;
 
   constructor() {
     this.container = document.getElementById('container');
-    this.speed = this.createCircle().speed;
   }
 
   createSvgElement(elemName) {
