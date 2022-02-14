@@ -1,12 +1,16 @@
 import {IVisa} from "./IVisa";
-import {Candidate} from "./Cadidate";
+import {Person} from "./Person";
 import {checkInputValue} from "./checkInputValue";
 import {renderTableCandidate} from "./renderTableCandidate";
 
 export class Visa implements IVisa {
+  candidates;
+  constructor() {
+    this.candidates = [];
+  }
 
   generateData(): void {
-    const candidate = new Candidate();
+    const candidate = new Person();
     const name: HTMLElement = document.getElementById('name');
     const balance = document.getElementById('balance');
     const age = document.getElementById('age');
@@ -59,23 +63,41 @@ export class Visa implements IVisa {
     const btnAdd = <HTMLButtonElement>document.getElementById('add_candidate');
     const race = <HTMLButtonElement>document.getElementById('race');
     const btnsGener: NodeListOf<HTMLButtonElement> = document.querySelectorAll('.generate');
-    const name: HTMLElement = document.getElementById('name');
-    const balance = document.getElementById('balance');
-    const age = document.getElementById('age');
-    const doc = document.getElementById('document');
-    const level = document.getElementById('english');
-    let column = 0
+    // @ts-ignore
+    const name: HTMLInputElement = document.getElementById('name');
+    // @ts-ignore
+    const balance: HTMLInputElement = document.getElementById('balance');
+    // @ts-ignore
+    const age: HTMLInputElement = document.getElementById('age');
+    // @ts-ignore
+    const doc: HTMLInputElement = document.getElementById('document');
+    // @ts-ignore
+    const level: HTMLInputElement = document.getElementById('english');
+    let column = 0;
+    const btnGenerateAll = <HTMLButtonElement>document.getElementById('generate_all');
 
     btnAdd.addEventListener('click', () => {
-      // if (candidates === 5) {
-      //   btnAdd.disabled = true;
-      //   race.disabled = false;
+
+      const candidate = {name: name.value, balance: balance.value, age: age.value, doc: doc.value, level: level.value}
+
+      if (this.candidates.length === 5) {
+        btnAdd.disabled = true;
+        race.disabled = false;
+        btnGenerateAll.disabled = true;
         btnsGener.forEach(el => {
           el.disabled = true;
         });
-      // }
-      renderTableCandidate(column++, name, balance, age, doc, level)
-
+      } else {
+        btnAdd.disabled = false;
+        this.candidates.push(candidate)
+        console.log(this.candidates)
+        renderTableCandidate(column++, candidate);
+      }
+      name.value = '';
+      balance.value = '';
+      age.value = '';
+      doc.value = '';
+      level.value = '';
     });
   }
 

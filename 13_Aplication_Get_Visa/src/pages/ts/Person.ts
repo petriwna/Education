@@ -1,6 +1,19 @@
-import {ICandidate} from "./ICandidate";
+import {IPerson} from "./IPerson";
 
-export class Candidate implements ICandidate {
+export class Person implements IPerson {
+  name: string;
+  balance: number;
+  age: number;
+  doc: number;
+  level: string;
+
+  constructor() {
+    this.name = '';
+    this.balance = 0;
+    this.age = 0;
+    this.doc = 0;
+    this.level = '';
+  }
 
   getRandomAge(el): number {
     let random = 0;
@@ -33,7 +46,7 @@ export class Candidate implements ICandidate {
   }
 
   getRandomEnglishLevel(el): string {
-    const english = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2', ];
+    const english = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2',];
     let random = 0;
     if (Math.random() > 0.3) {
       random = 2 || 3 || 4;
