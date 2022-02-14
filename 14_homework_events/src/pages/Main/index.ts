@@ -8,6 +8,7 @@ function init() {
   gallery.onZoomImage();
   gallery.onSliderShow();
   gallery.offSlideShow();
+  gallery.getBigImage();
 }
 
 document.addEventListener('DOMContentLoaded', function () {
