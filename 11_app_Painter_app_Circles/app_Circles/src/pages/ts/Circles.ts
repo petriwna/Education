@@ -1,4 +1,4 @@
-import {MAX_RADIUS, MAX_SPEED, MIN_RADIUS, MIN_SPEED} from "./constants";
+import {FULL_HEIGHT, FULL_WIDTH, MAX_RADIUS, MAX_SPEED, MIN_RADIUS, MIN_SPEED} from "./constants";
 
 export class Circles {
   container: HTMLElement;
@@ -30,29 +30,28 @@ export class Circles {
     circleSvg.setAttributeNS(null, 'cy', String(circle.radius));
     svg.appendChild(circleSvg);
 
-    let nowLeft = svg.getBoundingClientRect().left;
-    let nowTop = svg.getBoundingClientRect().top;
-    const maxWidth = this.container.offsetWidth - svg.getBoundingClientRect().width;
-    const maxHeight = this.container.offsetHeight - svg.getBoundingClientRect().height;
+    let speed = Math.floor(Math.random() * MAX_SPEED + MIN_SPEED);
+    let nowLeft = svg.getBoundingClientRect().left + (speed / 1000) * circle.dx;
+    let nowTop = svg.getBoundingClientRect().top + (speed / 1000) * circle.dy;
 
-    setInterval(() => {
-
-      nowLeft += this.speed;
-      if (nowLeft >= maxWidth) {
-        this.speed = -this.speed;
+    setInterval(function () {
+      console.log(nowLeft);
+      nowLeft += speed;
+      if (nowLeft >= FULL_WIDTH) {
+        speed = -speed;
       }
       if (nowLeft <= 0) {
-        this.speed = parseInt(String(Math.random() * 10 + 1));
+        speed = Math.floor(Math.random() * MAX_SPEED + MIN_SPEED);
       }
       svg.style.left = nowLeft + "px";
 
-      nowTop += this.speed;
-      if (nowTop >= maxHeight) {
-        this.speed = parseInt(String(Math.random() * 10 + 1));
-        this.speed = -this.speed;
+      nowTop += speed;
+      if (nowTop >= FULL_HEIGHT) {
+        speed = Math.floor(Math.random() * MAX_SPEED + MIN_SPEED);
+        speed = -speed;
       }
       if (nowTop <= 0) {
-        this.speed = parseInt(String(Math.random() * 10 + 1));
+        speed = Math.floor(Math.random() * MAX_SPEED + MIN_SPEED);
       }
       svg.style.top = nowTop + "px";
     }, 30);
@@ -73,8 +72,7 @@ export class Circles {
     const angle = Math.random() * 2 * Math.PI;
     const dx = Math.cos(angle);
     const dy = Math.sin(angle);
-    const speed = Math.floor(Math.random() * MAX_SPEED + MIN_SPEED);
     const color = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
-    return {dx, dy, radius, color, speed};
+    return {dx, dy, radius, color};
   }
 }
