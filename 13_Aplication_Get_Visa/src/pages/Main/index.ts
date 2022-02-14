@@ -6,7 +6,8 @@ function init() {
 
   visa.generateData();
   visa.showCandidate();
-  visa.addCandidate()
+  visa.addCandidate();
+  visa.startRace();
 }
 
 window.addEventListener('DOMContentLoaded', () => {

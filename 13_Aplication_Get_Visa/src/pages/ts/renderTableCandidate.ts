@@ -5,7 +5,6 @@ export function renderTableCandidate(column, candidate){
   const lineDoc = document.querySelectorAll('.doc');
   const lineLevel = document.querySelectorAll('.level');
 
-console.log(candidate)
   lineName[column].textContent = candidate.name;
   lineBalance[column].textContent = candidate.balance;
   lineAge[column].textContent = candidate.age;

@@ -5,54 +5,55 @@
   <title>Get Visa</title>
 </head>
 <body>
-<section class="content">
-  <section id="form" class="content__form">
-    <section class="content__form--container">
-      <label class="content__form--label">Name</label>
-      <input id="name" type="text" class="content__form--input" placeholder="Enter student name...">
+<section id="container-generate" class="generate">
+<section class="generate__content">
+  <section id="form" class="generate__content__form">
+    <section class="generate__content__form--container">
+      <label class="generate__content__form--label">Name</label>
+      <input id="name" type="text" class="generate__content__form--input" placeholder="Enter student name...">
 
-      <button id="name_generate" class="content__form--generate-btn generate">Generate</button>
+      <button id="name_generate" class="generate__content__form--generate-btn generate">Generate</button>
     </section>
 
-    <section class="content__form--container">
-      <label class="content__form--label">Balance</label>
-      <input id="balance" type="number" class="content__form--input" placeholder="Enter balance...">
+    <section class="generate__content__form--container">
+      <label class="generate__content__form--label">Balance</label>
+      <input id="balance" type="number" class="generate__content__form--input" placeholder="Enter balance...">
 
-      <button id="balance_generate" class="content__form--generate-btn generate">Generate</button>
+      <button id="balance_generate" class="generate__content__form--generate-btn generate">Generate</button>
     </section>
 
-    <section class="content__form--container">
-      <label class="content__form--label">Age</label>
-      <input id="age" type="number" class="content__form--input" placeholder="Enter student age...">
+    <section class="generate__content__form--container">
+      <label class="generate__content__form--label">Age</label>
+      <input id="age" type="number" class="generate__content__form--input" placeholder="Enter student age...">
 
-      <button id="age_generate" class="content__form--generate-btn generate">Generate</button>
+      <button id="age_generate" class="generate__content__form--generate-btn generate">Generate</button>
     </section>
 
-    <section class="content__form--container">
-      <label class="content__form--label">Document</label>
-      <input id="document" type="number" min="-5" max="3" class="content__form--input" placeholder="Enter documents...">
+    <section class="generate__content__form--container">
+      <label class="generate__content__form--label">Document</label>
+      <input id="document" type="number" min="-5" max="3" class="generate__content__form--input" placeholder="Enter documents...">
 
-      <button id="document_generate" class="content__form--generate-btn generate">Generate</button>
+      <button id="document_generate" class="generate__content__form--generate-btn generate">Generate</button>
     </section>
 
-    <section class="content__form--container">
-      <label class="content__form--label">English level</label>
-      <input id="english" type="text" class="content__form--input" placeholder="Enter student english level...">
+    <section class="generate__content__form--container">
+      <label class="generate__content__form--label">English level</label>
+      <input id="english" type="text" class="generate__content__form--input" placeholder="Enter student english level...">
 
-      <button id="english_generate" class="content__form--generate-btn generate">Generate</button>
+      <button id="english_generate" class="generate__content__form--generate-btn generate">Generate</button>
     </section>
   </section>
-  <section class="content__buttons">
-    <section class="content__buttons--wrapper">
-      <button id="generate_all" class="content__buttons--btn content__buttons--generateAll">Generate all</button>
-      <button id="add_candidate" class="content__buttons--btn content__buttons--addCandidate">Add candidate</button>
+  <section class="generate__content__buttons">
+    <section class="generate__content__buttons--wrapper">
+      <button id="generate_all" class="generate__content__buttons--btn generate__content__buttons--generateAll">Generate all</button>
+      <button id="add_candidate" class="generate__content__buttons--btn generate__content__buttons--addCandidate">Add candidate</button>
     </section>
-    <section class="content__buttons--wrapper">
-      <button id="init" class="content__buttons--btn content__buttons--init">Init</button>
-      <button id="race" class="content__buttons--btn content__buttons--race">Race</button>
+    <section class="generate__content__buttons--wrapper">
+      <button id="init" class="generate__content__buttons--btn generate__content__buttons--init">Init</button>
+      <button id="race" class="generate__content__buttons--btn generate__content__buttons--race">Race</button>
     </section>
-    <section class="content__buttons--wrapper">
-      <button id="clear" class="content__buttons--btn content__buttons--clear">Clear</button>
+    <section class="generate__content__buttons--wrapper">
+      <button id="clear" class="generate__content__buttons--btn generate__content__buttons--clear">Clear</button>
     </section>
   </section>
 
@@ -105,5 +106,10 @@
     </tbody>
   </table>
 </section>
+</section>
+<section id="container-race" class="container__race hide">
+ 
+</section>
+
 </body>
 </html>

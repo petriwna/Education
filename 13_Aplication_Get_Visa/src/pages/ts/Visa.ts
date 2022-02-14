@@ -89,8 +89,7 @@ export class Visa implements IVisa {
         });
       } else {
         btnAdd.disabled = false;
-        this.candidates.push(candidate)
-        console.log(this.candidates)
+        this.candidates.push(candidate);
         renderTableCandidate(column++, candidate);
       }
       name.value = '';
@@ -101,4 +100,14 @@ export class Visa implements IVisa {
     });
   }
 
+  startRace(){
+    const race = document.getElementById('race');
+    const containerGenerate = document.getElementById('container-generate');
+    const containerRace = document.getElementById('container-race');
+
+    race.addEventListener('click', () => {
+      containerRace.classList.remove('hide');
+      containerGenerate.classList.add('hide');
+    });
+  }
 }
