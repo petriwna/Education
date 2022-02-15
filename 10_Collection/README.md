@@ -57,8 +57,10 @@ ITree.prototype.size = function(){}; // возвращает количеств�
 ITree.prototype.insert = function(value){}; // вставка узла в дерево
 ITree.prototype.print = function(node, callback){}; // обход в глубину дерева -
 тремя способами
+
 ITree.prototype.toArray = function(){}; // представление дерева в виде массива
 данных
+
 ITree.prototype.search = function(value){}; // возвращает узел согласно
 переданному значению
 ITree.prototype.width = function(){}; // возвращает максимальную ширину
