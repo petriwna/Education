@@ -1,0 +1,12 @@
+@import 'default';
+
+.buttons{
+  &__inp-btn{
+    background: #C21F39;
+    padding: 10px;
+    border: none;
+    color: white;
+    margin: 10px;
+    width: 95px;
+  }
+}
